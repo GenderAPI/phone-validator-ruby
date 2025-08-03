@@ -1,7 +1,7 @@
 # lib/phonevalidator.rb
 
-require "phonevalidator/version"
-require "phonevalidator/client"
+require "genderapi-phone-validator/version"
+require "genderapi-phone-validator/client"
 
 module PhoneValidator
   # boş bırakabilirsin veya helper methodlar koyabilirsin

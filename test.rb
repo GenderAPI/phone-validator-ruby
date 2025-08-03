@@ -1,4 +1,4 @@
-require 'phonevalidator'
+require 'genderapi-phone-validator'
 
 client = PhoneValidator::Client.new(api_key: "YOUR_API_KEY")
 

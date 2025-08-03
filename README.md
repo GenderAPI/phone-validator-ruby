@@ -22,13 +22,13 @@ Whether your users enter phone numbers in various formats (e.g., `12128675309`, 
 Add the gem to your project:
 
 ```bash
-gem install phonevalidator
+gem install genderapi-phone-validator
 ```
 
 Or in your `Gemfile`:
 
 ```ruby
-gem 'phonevalidator'
+gem 'genderapi-phone-validator'
 ```
 
 ---
@@ -43,7 +43,7 @@ Sign up and get your key from your dashboard.
 ## 🚀 Usage
 
 ```ruby
-require 'phonevalidator'
+require 'genderapi-phone-validator'
 
 client = PhoneValidator::Client.new(api_key: "YOUR_API_KEY")
 
