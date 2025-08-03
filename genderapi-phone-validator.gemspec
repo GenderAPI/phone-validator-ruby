@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "genderapi-phone-validator"
-  spec.version       = "1.0.0"
+  spec.version       = "1.0.2"
   spec.authors       = ["Onur Ozturk"]
   spec.email         = ["support@genderapi.io"]
 
@@ -22,8 +22,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://www.genderapi.io"
   spec.metadata = {
     "source_code_uri"     => "https://github.com/GenderAPI/phone-validator-ruby",
-    "changelog_uri"       => "https://github.com/GenderAPI/phone-validator-ruby/blob/main/CHANGELOG.md",
-    "documentation_uri"   => "https://rubydoc.info/gems/genderapi-phone-validator/1.0.0"
+    "changelog_uri"       => "https://github.com/GenderAPI/phone-validator-ruby/blob/main/CHANGELOG.md"
   }
 
   spec.license       = "MIT"

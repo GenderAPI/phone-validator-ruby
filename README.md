@@ -1,6 +1,6 @@
 # 📞 Phone Number Validation & Formatter API (Ruby SDK)
 
-The `phonevalidator` gem uses the official [GenderAPI Phone Number Validation & Formatter API](https://www.genderapi.io/) to validate and format phone numbers from over 240 countries and territories.
+The `genderapi-phone-validator` gem uses the official [GenderAPI Phone Number Validation & Formatter API](https://www.genderapi.io/) to validate and format phone numbers from over 240 countries and territories.
 
 Whether your users enter phone numbers in various formats (e.g., `12128675309`, `+1 212 867 5309`, `001-212-867-5309`), this library will intelligently detect, validate, and convert the input into a standardized E.164 format (e.g., `+12128675309`).
 

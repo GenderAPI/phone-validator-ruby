@@ -5,25 +5,30 @@ require "json"
 
 module PhoneValidator
   ##
-  # Ruby SDK for Phone Number Validation & Formatter API from www.genderapi.io
+  # PhoneValidator::Client
   #
-  # This SDK allows you to:
-  #   - Validate international phone numbers
-  #   - Detect number type (mobile, landline, VoIP, etc.)
-  #   - Retrieve region and country metadata
-  #   - Format numbers to E.164 or national format
+  # Ruby SDK for the Phone Number Validation & Formatter API provided by [GenderAPI](https://www.genderapi.io).
   #
-  # Learn more: https://www.genderapi.io
+  # This class allows you to:
+  # - Validate international phone numbers
+  # - Detect number type (mobile, landline, VoIP, etc.)
+  # - Retrieve region and country metadata
+  # - Format numbers to E.164 or national format
+  #
+  # @example Basic usage
+  #   client = PhoneValidator::Client.new(api_key: "your_api_key")
+  #   result = client.validate(number: "+1 212 867 5309", address: "US")
+  #   puts result["e164"]
   #
   class Client
     include HTTParty
     base_uri "https://api.genderapi.io"
 
     ##
-    # Initialize the PhoneValidator client.
+    # Initializes a new client instance.
     #
     # @param api_key [String] Your GenderAPI API key as a Bearer token.
-    # @param base_url [String] Optional override for the API base URL.
+    # @param base_url [String] Optional override for the base URL (defaults to api.genderapi.io).
     #
     def initialize(api_key:, base_url: nil)
       @api_key = api_key
@@ -35,12 +40,15 @@ module PhoneValidator
     end
 
     ##
-    # Validate and format a phone number.
+    # Validates and formats a phone number.
     #
-    # @param number [String] The phone number to validate (required).
-    # @param address [String] Optional address or country hint for better accuracy.
+    # @param number [String] Phone number in any format (required).
+    # @param address [String] Optional. Country code (e.g., 'US'), full country name, or city name to improve accuracy.
     #
-    # @return [Hash] Parsed JSON response containing validation results.
+    # @return [Hash] The parsed JSON response as a Ruby Hash.
+    #
+    # @example Validate number
+    #   client.validate(number: "+1 212 867 5309", address: "US")
     #
     def validate(number:, address: "")
       payload = {
@@ -54,17 +62,12 @@ module PhoneValidator
     private
 
     ##
-    # Internal helper for sending POST requests to the GenderAPI.io API.
+    # Internal helper to POST a request to the API and parse the result.
     #
-    # Handles:
-    #   - Bearer token authorization
-    #   - Payload cleanup (removal of nil values)
-    #   - Error handling and JSON parsing
+    # @param endpoint [String] API endpoint path (e.g. "/api/phone").
+    # @param payload [Hash] Request body to be sent as JSON.
     #
-    # @param endpoint [String] API endpoint path (e.g. "/api/phone")
-    # @param payload [Hash] Request body
-    #
-    # @return [Hash] Parsed JSON response
+    # @return [Hash] Parsed JSON response.
     #
     def _post_request(endpoint, payload)
       cleaned_payload = payload.reject { |_k, v| v.nil? }
@@ -89,10 +92,10 @@ module PhoneValidator
     end
 
     ##
-    # Safely parse JSON response.
+    # Safely parses a JSON string to a Ruby Hash.
     #
-    # @param body [String] JSON string
-    # @return [Hash] Ruby Hash
+    # @param body [String] Raw JSON response.
+    # @return [Hash] Parsed JSON as Hash.
     #
     def parse_json(body)
       JSON.parse(body)
