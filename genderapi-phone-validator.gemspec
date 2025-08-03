@@ -23,6 +23,7 @@ Gem::Specification.new do |spec|
   spec.metadata = {
     "source_code_uri"     => "https://github.com/GenderAPI/phone-validator-ruby",
     "changelog_uri"       => "https://github.com/GenderAPI/phone-validator-ruby/blob/main/CHANGELOG.md"
+    "documentation_uri"   => "https://rubydoc.info/github/GenderAPI/phone-validator-ruby"
   }
 
   spec.license       = "MIT"
