@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "genderapi-phone-validator"
-  spec.version       = "1.0.2"
+  spec.version       = "1.0.3"
   spec.authors       = ["Onur Ozturk"]
   spec.email         = ["support@genderapi.io"]
 
